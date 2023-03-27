@@ -4,7 +4,7 @@ import re
 # Accepts text as a parameter, and returns a dictionary of the word lengths in it.
 # The key is the word and the value is its length.
 def count_words(text1):
-    # To clear the text of non-letter characters
+    # To clear the text of non-letter characters.
     new_text = [re.compile('[^a-zA-Z]').sub('', word.lower()) for word in re.split('[,. \n?:!@#$%^&*()_+<>"=-]', text1)]
     list(dict.fromkeys(new_text))
     count = {word: len(word) for word in new_text if len(word) > 0}
